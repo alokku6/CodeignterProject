@@ -1,1 +1,186 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 29, 2023 at 09:08 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ci_cms`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(122) NOT NULL,
+  `username` varchar(122) NOT NULL,
+  `password` varchar(122) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `username`, `password`) VALUES
+(1, 'Alok Kumar', 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `application`
+--
+
+CREATE TABLE `application` (
+  `id` int(11) NOT NULL,
+  `applicant_no` varchar(255) NOT NULL,
+  `product` varchar(122) NOT NULL,
+  `password` varchar(122) NOT NULL,
+  `doa` date NOT NULL,
+  `applicant_name` varchar(255) NOT NULL,
+  `father_spouse` varchar(255) NOT NULL,
+  `gender` varchar(122) NOT NULL,
+  `status` varchar(122) NOT NULL,
+  `nation` varchar(122) NOT NULL,
+  `other_nation` varchar(122) NOT NULL,
+  `dob` date NOT NULL,
+  `mobile` varchar(122) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `adhar_card` varchar(122) NOT NULL,
+  `pan_card` varchar(122) NOT NULL,
+  `address` text NOT NULL,
+  `image` varchar(122) NOT NULL,
+  `sec_applicant` varchar(122) NOT NULL,
+  `sec_adhar` varchar(122) NOT NULL,
+  `sec_pan` varchar(122) NOT NULL,
+  `sec_address` text NOT NULL,
+  `thr_applicant` varchar(122) NOT NULL,
+  `thr_adhar` varchar(122) NOT NULL,
+  `thr_pan` varchar(122) NOT NULL,
+  `thr_address` text NOT NULL,
+  `received_name` varchar(122) NOT NULL,
+  `allotment` varchar(122) NOT NULL,
+  `plan` varchar(122) NOT NULL,
+  `option` varchar(122) NOT NULL,
+  `cheque` varchar(122) NOT NULL,
+  `dated` varchar(122) NOT NULL,
+  `amount` varchar(122) NOT NULL,
+  `bank_branch` varchar(122) NOT NULL,
+  `bank_name` varchar(122) NOT NULL,
+  `branch_name` varchar(122) NOT NULL,
+  `city` varchar(122) NOT NULL,
+  `account` varchar(122) NOT NULL,
+  `code` varchar(122) NOT NULL,
+  `acc_type` varchar(122) NOT NULL,
+  `first_nominee` varchar(122) NOT NULL,
+  `first_address` varchar(255) NOT NULL,
+  `first_share` varchar(122) NOT NULL,
+  `second_nominee` varchar(122) NOT NULL,
+  `second_address` varchar(255) NOT NULL,
+  `second_share` varchar(255) NOT NULL,
+  `third_nominee` varchar(122) NOT NULL,
+  `third_address` varchar(255) NOT NULL,
+  `third_share` varchar(122) NOT NULL,
+  `four_nominee` varchar(122) NOT NULL,
+  `four_address` varchar(233) NOT NULL,
+  `four_share` varchar(122) NOT NULL,
+  `agree` varchar(122) NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `application`
+--
+
+INSERT INTO `application` (`id`, `applicant_no`, `product`, `password`, `doa`, `applicant_name`, `father_spouse`, `gender`, `status`, `nation`, `other_nation`, `dob`, `mobile`, `email`, `adhar_card`, `pan_card`, `address`, `image`, `sec_applicant`, `sec_adhar`, `sec_pan`, `sec_address`, `thr_applicant`, `thr_adhar`, `thr_pan`, `thr_address`, `received_name`, `allotment`, `plan`, `option`, `cheque`, `dated`, `amount`, `bank_branch`, `bank_name`, `branch_name`, `city`, `account`, `code`, `acc_type`, `first_nominee`, `first_address`, `first_share`, `second_nominee`, `second_address`, `second_share`, `third_nominee`, `third_address`, `third_share`, `four_nominee`, `four_address`, `four_share`, `agree`, `create_at`) VALUES
+(19, '39847589', 'AC Installation', 'vYT)VIdmyB', '2023-01-31', 'Alok Kimar', 'aksdf', 'Other', 'Other', 'Indian', '', '2023-01-31', '3987598', 'alok@gmail.com', '39847598', '3987', 'patna', 'IIT-JEE-logo7.jpg', 'akj', '34987', '837', 'lakdj', 'asdf', '354345', '3453454', 'dfgvdsf', 'zxcv', 'zxcv', 'zxcv', 'cvzxv', 'zxcv', '2023-01-31', '3454', 'dfvsdfs', 'SBI', 'patna', 'patna', '3984987', 'SBI', 'Saving', 'asdf', 'asdf', 'sda', '', '', '', '', '', '', '', '', '', 'agree', '2023-09-21 08:01:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service`
+--
+
+CREATE TABLE `service` (
+  `id` int(11) NOT NULL,
+  `service` varchar(122) NOT NULL,
+  `image` varchar(122) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`id`, `service`, `image`) VALUES
+(13, 'AC Installation', 'ac.png'),
+(14, 'Washing Machine', 'washing.png'),
+(16, 'Chimney Service', 'chimny.png'),
+(17, 'Fire Extinguisher', 'fire.png'),
+(18, 'Microwaves Service', 'micro.png'),
+(19, 'RO Service', 'ro1.png');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `application`
+--
+ALTER TABLE `application`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `service`
+--
+ALTER TABLE `service`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `application`
+--
+ALTER TABLE `application`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `service`
+--
+ALTER TABLE `service`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
